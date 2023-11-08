@@ -1,0 +1,71 @@
+a {
+  @include typeface-2(p2, desktop);
+  text-decoration: none;
+  color: $black;
+  transition: 0.5s ease;
+  &:hover {
+    opacity: 0.9;
+  }
+}
+
+.btn {
+  background: linear-gradient(221deg, $secondary 14.43%, $primary 85.28%);
+  border-radius: 1rem;
+  padding: convert-rem(12) convert-rem(32);
+  transition: 0.3s ease;
+  color: $white-light;
+
+  box-shadow: 0px 17px 17px rgba(204, 204, 204, 0.04),
+    0px 5.125px 5.125px rgba(204, 204, 204, 0.0260636),
+    0px 2.12866px 2.12866px rgba(204, 204, 204, 0.02),
+    0px 0.769896px 0.769896px rgba(204, 204, 204, 0.0139364);
+
+  &:hover {
+    transform: scale(1.02);
+    box-shadow: 0px 17px 17px rgba(169, 80, 196, 0.13),
+      0px 5.125px 5.125px rgba(169, 80, 196, 0.0847066),
+      0px 2.12866px 2.12866px rgba(169, 80, 196, 0.065),
+      0px 0.769896px 0.769896px rgba(169, 80, 196, 0.0452935);
+    opacity: 0.9;
+  }
+}
+
+.navbar-desktop {
+  max-width: $container-xl;
+  margin: 0 auto;
+  padding: convert-rem(10) convert-rem(24);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @include responsive(s) {
+    display: none;
+  }
+}
+
+.navbar-desktop-item-1 {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.navbar-desktop-item-2 {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar-mobile,
+.menu-mobile {
+  display: none;
+
+  @include responsive(s) {
+    display: block;
+  }
+}
