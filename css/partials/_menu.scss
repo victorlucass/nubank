@@ -4,7 +4,7 @@ header {
   box-shadow: none;
   position: fixed;
   z-index: 999;
-  transition: .5s ease;
+  transition: 0.5s ease;
 }
 
 .active-header {
@@ -13,4 +13,146 @@ header {
     0px 6.38599px 10.01724px 0px rgba(169, 80, 196, 0.04),
     0px 15.37501px 24.11766px 0px rgba(169, 80, 196, 0.05),
     0px 51px 80px 0px rgba(169, 80, 196, 0.08);
+}
+
+// <============= DESKTOP =============>
+.navbar-desktop {
+  max-width: $container-xl;
+  margin: 0 auto;
+  padding: convert-rem(10) convert-rem(24);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @include responsive(s) {
+    display: none;
+  }
+}
+
+.navbar-desktop-item-1 {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.navbar-desktop-item-2 {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.logo {
+  height: 48px;
+  width: 48px;
+  background-color: $primary-light;
+  margin-right: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu-desktop {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  &,
+  ul > li {
+    list-style: none;
+  }
+  .menu-item {
+    position: relative;
+  }
+}
+
+.nav-link-desktop {
+  display: inline-block;
+  padding: convert-rem(12) 1rem;
+  position: relative;
+
+  // como fazer a flechinha pra baixo!
+  &::after {
+    content: "";
+    position: absolute;
+    top: 42%;
+    right: -3px;
+    width: 7px;
+    height: 7px;
+    border-bottom: 2px solid $primary;
+    border-right: 2px solid $primary;
+    border-radius: 1px;
+    transform: rotate(45deg);
+    transition: 0.5s ease;
+  }
+
+  &:hover {
+    &::after {
+      transform: rotate(135deg);
+    }
+  }
+}
+
+.dropdown-menu {
+  background-color: $white-light;
+  border-radius: 16px;
+  box-shadow: 0px 51px 80px rgba(169, 80, 196, 0.08),
+    0px 15.375px 24.1177px rgba(169, 80, 196, 0.0521271),
+    0px 6.38599px 10.0172px rgba(169, 80, 196, 0.04),
+    0px 2.30969px 3.62304px rgba(169, 80, 196, 0.0278729);
+  position: absolute;
+  top: 48px;
+  left: 24px;
+  padding: 1rem convert-rem(24);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  // removendo da tela
+  opacity: 0;
+  pointer-events: none;
+  transition: .7s ease;
+
+  // filhos
+  .dropdown-item {
+    width: 100%;
+  }
+}
+
+// classe que irá aparecer o dropdown menu ao passar o mouse
+.active-dropdown-menu {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.nav-link-dropdown {
+  display: inline-block;
+  width: 100%;
+  padding: convert-rem(8) 1rem;
+  position: relative;
+
+  // como fazer o efeito de sublinhado!
+  &::after{
+    content: '';
+    position: absolute;
+    top: 90%;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: $secondary;
+    transition: .5s ease;
+  }
+  &:hover {
+    &::after {
+      width: 100%;
+    }
+  }
+}
+
+// <============= MOBILE =============>
+.navbar-mobile,
+.menu-mobile {
+  display: none;
+
+  @include responsive(s) {
+    display: block;
+  }
 }

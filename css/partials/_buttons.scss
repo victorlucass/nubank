@@ -8,6 +8,7 @@ a {
   }
 }
 
+// como fazer um background gradiente!
 .btn {
   background: linear-gradient(221deg, $secondary 14.43%, $primary 85.28%);
   border-radius: 1rem;
@@ -27,45 +28,5 @@ a {
       0px 2.12866px 2.12866px rgba(169, 80, 196, 0.065),
       0px 0.769896px 0.769896px rgba(169, 80, 196, 0.0452935);
     opacity: 0.9;
-  }
-}
-
-.navbar-desktop {
-  max-width: $container-xl;
-  margin: 0 auto;
-  padding: convert-rem(10) convert-rem(24);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  @include responsive(s) {
-    display: none;
-  }
-}
-
-.navbar-desktop-item-1 {
-  flex: 1;
-  display: flex;
-  align-items: center;
-}
-
-.navbar-desktop-item-2 {
-  flex: 1;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-}
-
-.logo {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.navbar-mobile,
-.menu-mobile {
-  display: none;
-
-  @include responsive(s) {
-    display: block;
   }
 }
