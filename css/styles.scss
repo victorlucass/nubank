@@ -28,6 +28,10 @@ body{
   background-color: $white-light;
 }
 
+svg, img {
+  max-width: 100%;
+}
+
 .border {
   border: 1px solid red;
 }

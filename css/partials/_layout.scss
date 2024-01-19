@@ -37,3 +37,75 @@ $container-s: 540px;
     }
   }
 }
+
+.container {
+  max-width: $container-xl;
+  margin: 0 auto;
+  padding: 6rem 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  overflow: hidden;
+  border: 1px solid red;
+
+  @include responsive(s){
+    flex-direction: column;
+    padding: 2rem 1.25rem;
+  }
+}
+
+.flex-start {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.relative {
+  position: relative;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+@for $i from 1 through 5 {
+  .flex-item-#{$i} {
+    flex: $i 1 360px;
+  }
+}
+
+.flex-item-auto {
+  flex: 2 1 auto;
+}
+
+.w-auto {
+  width: auto;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.w-75 {
+  width: 75%;
+}
+
+.w-50 {
+  width: 50%;
+}
+
+.hidden {
+  overflow: hidden;
+}
