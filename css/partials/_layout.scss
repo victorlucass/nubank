@@ -31,7 +31,7 @@ $container-s: 540px;
       @content;
     }
   } @else if $device == xs {
-    // Abaixo de 540px  
+    // Abaixo de 540px
     @media screen and (max-width: $container-s) {
       @content;
     }
@@ -47,9 +47,8 @@ $container-s: 540px;
   align-items: center;
   flex-direction: row;
   overflow: hidden;
-  border: 1px solid red;
 
-  @include responsive(s){
+  @include responsive(s) {
     flex-direction: column;
     padding: 2rem 1.25rem;
   }
@@ -108,4 +107,12 @@ $container-s: 540px;
 
 .hidden {
   overflow: hidden;
+}
+
+.hero {
+  height: 90vh;
+
+  @include responsive(s) {
+    height: auto;
+  }
 }

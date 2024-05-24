@@ -177,7 +177,7 @@ header {
     width: 70%;
     height: 2px;
     background-color: $primary-light;
-    transition: .3s ease;
+    transition: 0.3s ease;
   }
 
   &::before {
@@ -188,7 +188,7 @@ header {
     width: 70%;
     height: 2px;
     background-color: $primary-light;
-    transition: .3s ease;
+    transition: 0.3s ease;
   }
 }
 
@@ -248,6 +248,22 @@ header {
   list-style: none;
   display: flex;
   flex-direction: column;
+
+  svg {
+    width: 2.25rem;
+    height: 2.25rem;
+
+    path {
+      stroke: $gray-7;
+      transition: 0.7s ease;
+    }
+
+    &:hover {
+      path {
+        stroke: $primary-light;
+      }
+    }
+  }
 }
 
 .nav-link-mobile {
