@@ -584,7 +584,7 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 800;
+  z-index: 999;
 }
 
 .menu-desktop {
@@ -671,7 +671,6 @@ header {
   max-width: 1440px;
   margin: 0 auto;
   padding: 10px 24px;
-  display: none;
 }
 @media screen and (max-width: 960px) {
   .navbar-mobile {
@@ -686,7 +685,7 @@ header {
   height: 36px;
   position: relative;
   cursor: pointer;
-  z-index: 800;
+  z-index: 999;
 }
 .bx::after {
   content: "";
@@ -714,7 +713,7 @@ header {
   height: 36px;
   position: relative;
   cursor: pointer;
-  z-index: 800;
+  z-index: 999;
   transition: 0.7 ease;
 }
 .active-bx::after {
@@ -739,16 +738,17 @@ header {
 }
 
 .menu-mobile {
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   background-color: #F3F0F5;
   display: flex;
   justify-content: center;
   align-items: center;
+  position: absolute;
   opacity: 0;
   pointer-events: none;
-  transform: translate3d(0, -100px, 0);
-  transition: 1s ease;
+  z-index: 999;
+  transition: 0.7s ease;
 }
 
 .active-menu-mobile {

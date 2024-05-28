@@ -49,7 +49,7 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 800;
+  z-index: 999;
 }
 
 .menu-desktop {
@@ -154,7 +154,6 @@ header {
   max-width: $container-xl;
   margin: 0 auto;
   padding: 10px 24px;
-  display: none;
   @include responsive(s) {
     display: flex;
     justify-content: space-between;
@@ -167,7 +166,7 @@ header {
   height: 36px;
   position: relative;
   cursor: pointer;
-  z-index: 800;
+  z-index: 999;
 
   &::after {
     content: "";
@@ -197,7 +196,7 @@ header {
   height: 36px;
   position: relative;
   cursor: pointer;
-  z-index: 800;
+  z-index: 999;
   transition: 0.7 ease;
 
   &::after {
@@ -224,18 +223,21 @@ header {
 }
 
 .menu-mobile {
-  width: 100%;
+  width: 100vw;
   height: 100vh;
-  // position: fixed;
+
   background-color: $white;
+
   display: flex;
   justify-content: center;
   align-items: center;
 
+  position: absolute;
   opacity: 0;
   pointer-events: none;
-  transform: translate3d(0, -100px, 0);
-  transition: 1s ease;
+  z-index: 999;
+
+  transition: 0.7s ease;
 }
 
 .active-menu-mobile {
